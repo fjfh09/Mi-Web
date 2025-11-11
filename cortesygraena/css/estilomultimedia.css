@@ -1,0 +1,55 @@
+* {margin: auto; padding: 0;}
+
+body{
+    background-color: #ffcccc;
+}
+/*HEADER*/
+header { background-color: #ffcccc; }
+header h1 { text-align: center; color: navy; font-size: 40px; padding: 30px;}
+header p {text-align: center; padding: 30px;}
+header a { text-align: center; color: peru; font-size: 20px; font-family: Arial; padding: 2px;}
+header a:hover{background-color: #f68d8d; color: aqua;}
+header img {position: absolute; left: 20px; top: 20px;}
+
+/*BODY*/
+
+section { background-color: #e2efd8;}
+
+.fotos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fotos div {
+    width: 33.33%; 
+    box-sizing: border-box;
+    padding: 60px;
+}
+
+div img:hover{
+    width: 550px;
+    height: auto;
+}
+
+video{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+article h3{text-align: left; padding: 0.1em 1em; color: #663366; font-size: 2.5em; font-family: Georgia; padding: 40px;}
+
+audio{
+    display: flex;
+    flex-wrap: wrap;
+    width: 35%;
+    box-sizing: border-box;
+}
+
+/*FOOTER*/
+footer { background-color: #ffcccc; }
+footer p {text-align: center; padding: 60px;}
+footer a { text-align: center; color: peru; font-size: 20px; font-family: Arial; padding: 2px;}
+footer a:hover{background-color: #f68d8d; color: aqua;}

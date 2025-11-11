@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Cortes y Graena</title>
+        <link rel="icon" href="https://www.cortesygraena.es/wp-content/uploads/2021/02/favicon.png">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/estilocontactar.css">
+    </head>
+    <body background bgcolor="#F0EEEE">
+        <!--------------------------->
+        <header>
+            <nav>
+                <img src="https://www.cortesygraena.es/wp-content/uploads/2021/02/favicon.png" alt="Ayuntamiento de Cortes y Graena" width="60" height="auto">
+            <center>
+                <h1>Cortes y Graena</h1>
+                <p>
+                    <a href="index.html">INICIO</a>
+                     | 
+                    <a href="historia.html">HISTORIA</a>
+                     | 
+                    <a href="fiestas.html">FIESTAS</a>
+                     | 
+                    <a href="información.html">INFORMACIÓN</a>
+                     | 
+                    <a href="multimedia.html">MULTIMEDIA</a>
+                     | 
+                    <a href="contactar.html" style="color: blue; background-color: #ffcccc;"><b><i>CONTACTAR</i></b></a>
+                </p>
+            </center>
+            </nav>
+        <hr>
+        </header>
+        <section>
+        <!--------------------------->
+        <h2>Formulario de contacto y que sabes del pueblo</h2>
+        <form action="recogidadedatos.php" method="post">
+            <p>Introduzca su nombre:</p>
+            <article><input type="text" name="nombre" placeholder="Introduce un nombre"></article>
+            <br><br>
+            <p>Fecha de nacimiento:</p>
+			<article><input type="date" name="date"><br></article>
+            <br>
+            <p>Introduce tu edad:</p>
+			<article><input type="number" name="number" min="1" max="120"><br></article>
+            <br>
+            <p>Si eres menor pon el rango de edad que tienes:</p>
+            <article><input type="range" name="rango" min="1" max="18"><br></article>
+            <br>
+            <p>E-mail:</p>
+			<article><input type="email" name="email"><br></article>
+            <br>
+            <p>Selecciona el sexo:</p>
+            <article id="sexos">
+                <div><input type="radio" name="sexo" value="hombre">Hombre</div>
+                <div><input type="radio" name="sexo" value="mujer">Mujer</div>
+            </article>
+            <br>
+            <br>
+            <p>Que pueblos pertenecen a Cortes y Graena:</p>
+            <br>
+            <article id="marcadores">
+            <div><input type="checkbox" name="graena" checked>Graena</div><br>
+			<div><input type="checkbox" name="losbaños">Los Baños</div><br>
+			<div><input type="checkbox" name="cortes">Cortes</div><br>
+			<div><input type="checkbox" name="lopera">Lopera</div><br>
+			<div><input type="checkbox" name="purullena">Purullena</div><br>
+            <div><input type="checkbox" name="marchal">Marchal</div><br>
+            <div><input type="checkbox" name="lapeza">la Peza</div><br>
+            </article>
+            <br>
+            <p>Selecciona cuando es San Lorenzo</p>
+            <article>
+                <select name="meses">
+                <option value="20octubre">20 de Octubre</option>
+                <option value="17junio">17 de Junio</option>
+                <option value="10agosto">10 de Agosto</option>
+                <option value="15abril">15 de Abril</option>
+                <option value="24febrero">24 de Febrero</option>
+            </select>
+            </article>
+            <br>
+            <hr>
+            <button type="submit">Enviar Datos</button>
+            <button type="reset">Limpiar Datos</button>
+        </form>
+    </section>
+        <!--------------------------->
+        <footer>
+        <hr>
+            <nav>
+            <center>
+                <p>
+                    <a href="index.html">Inicio</a>
+                     | 
+                    <a href="historia.html">Historia</a>
+                     | 
+                    <a href="fiestas.html">Fiestas</a>
+                     | 
+                    <a href="información.html">Información</a>
+                     | 
+                    <a href="multimedia.html">Multimedia</a>
+                     | 
+                    <a href="contactar.html" style="color: blue; background-color: #ffcccc;"><b><i>Contactar</i></b></a>
+                </p>
+            </center>
+            </nav>
+        </footer>
+    </body>
+</html>

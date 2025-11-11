@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat GranadaCF</title>
+    <link rel="icon" href="images/logo-granada.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="responsive">
+    <div id="header">
+        <div id="logo-container"><img src="https://abonados.granadacf.es/static/assets/genericos/images/logos/logo.svg" alt="Escudo del Granada CF" id="logo"></div>
+        <div id="texto-ia"><h1>GranadaGPT</h1></div>
+    </div>
+
+    
+    <div id="chat-container">
+        <div id="chat-box">
+            <div id="messages"></div>
+            <div id="response-container">
+                <div id="spinner" class="spinner" style="display:none;"></div>
+                <pre id="response"></pre>
+            </div>
+        </div>
+
+        <div id="sends-container">
+            <div id="pregunta-container">
+                <input type="text" id="user-input" placeholder="Escribe tu pregunta sobre el Granada CF">
+
+            </div>
+
+            <div id="send-container">
+                <button id="send-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"
+                        stroke-width="2">
+                        <path
+                            d="M4.698 4.034l16.302 7.966l-16.302 7.966a.503 .503 0 0 1 -.546 -.124a.555 .555 0 0 1 -.12 -.568l2.468 -7.274l-2.468 -7.274a.555 .555 0 0 1 .12 -.568a.503 .503 0 0 1 .546 -.124z">
+                        </path>
+                        <path d="M6.5 12h14.5"></path>
+                    </svg> </button>
+            </div>
+        </div>
+    </div>    
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

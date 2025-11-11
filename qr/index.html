@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9" />
+    <title>Generador QR avanzado</title>
+    <link rel="icon" href="../ico/Logo.ico" />
+
+    <!-- Normalización -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css"
+    />
+
+    <!-- Fuente -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- Tus estilos -->
+    <link rel="stylesheet" href="estilos.css" />
+
+    <!-- Librerías -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"
+      defer
+    ></script>
+    <script src="script2.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <h1>Almagara Generador QR</h1>
+
+        <div class="controls">
+          <div>
+            <label>Texto o URL</label>
+            <textarea id="text" rows="3" placeholder="Introduce texto o URL...">
+https://example.com</textarea
+            >
+          </div>
+
+          <div class="inputsGrid">
+            <div>
+              <label>Tamaño final (px)</label>
+              <input id="size" type="number" value="500" min="200" max="1000" />
+            </div>
+            <div>
+              <label>Margen del QR</label>
+              <input id="margin" type="number" value="4" min="0" max="20" />
+            </div>
+          </div>
+
+          <div class="inputsGrid">
+            <div>
+              <label>Nivel corrección</label>
+              <select id="ec">
+                <option value="L">L (bajo)</option>
+                <option value="M">M (medio)</option>
+                <option value="Q" selected>Q (alto)</option>
+                <option value="H">H (muy alto - recomendado con logo)</option>
+              </select>
+            </div>
+            <div>
+              <label>Forma del QR</label>
+              <select id="shape">
+                <option value="square">Cuadrado</option>
+                <option value="rounded">Redondeado</option>
+                <option value="circle" selected>Circulo</option>
+                <option value="diamond">Diamante</option>
+                <option value="heart">Corazón</option>
+                <option value="triangle">Triangulo</option>
+                <option value="star">Estrella</option>
+                <option value="dots">Puntos</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="inputsGrid" id="shapeSettings" style="display: none">
+            <div>
+              <label>Escala forma (0,6-1,0)</label>
+              <input
+                id="shapeScale"
+                type="number"
+                step="0.05"
+                min="0.6"
+                max="1"
+                value="0.95"
+              />
+            </div>
+            <div>
+              <label>Radio esquinas (Redondeado)</label>
+              <input
+                id="roundedRadius"
+                type="number"
+                min="0"
+                max="0.5"
+                step="0.01"
+                value="0.15"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label>Color de fondo y Transparecia</label>
+            <div style="display: flex; gap: 6px; align-items: center">
+              <input id="bgColorPicker" type="color" value="#ffffff" />
+              <input id="bgColor" type="text" value="#ffffff" maxlength="7" />
+              <input
+                id="bgColorOpacity"
+                type="number"
+                step="0.05"
+                min="0"
+                max="1"
+                value="1"
+              />
+            </div>
+          </div>
+
+          <div class="inputsGrid">
+            <div>
+              <label>Color primario (principio degradado)</label>
+              <div style="display: flex; gap: 6px; align-items: center">
+                <input id="color1Picker" type="color" value="#111827" />
+                <input id="color1" type="text" value="#111827" maxlength="7" />
+              </div>
+            </div>
+            <div>
+              <label>Color secundario (fin degradado)</label>
+              <div style="display: flex; gap: 6px; align-items: center">
+                <input id="color2Picker" type="color" value="#111827" />
+                <input id="color2" type="text" value="#111827" maxlength="7" />
+              </div>
+            </div>
+          </div>
+
+          <div class="inputsGrid">
+            <div>
+              <label>Tipo degradado</label>
+              <select id="gradientType">
+                <option value="none" selected>Ninguno</option>
+                <option value="linear">Lineal</option>
+                <option value="radial">Redondeado</option>
+              </select>
+            </div>
+            <div>
+              <label>Ángulo degradado (grados)</label>
+              <input
+                id="gradientAngle"
+                type="number"
+                value="0"
+                min="0"
+                max="360"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label>Logo (png/jpg)</label>
+            <div class="row" style="align-items: center">
+              <input
+                id="logoFile"
+                type="file"
+                accept=".png, .jpg, .jpeg, .ico"
+              />
+              <img
+                id="logoThumb"
+                class="logoPreview"
+                alt="Vista previa logo"
+                style="display: none; margin-left: 8px"
+              />
+            </div>
+
+            <div class="row" style="gap: 8px; margin-top: 6px">
+              <div style="flex: 1">
+                <label>Tamaño logo (%)</label>
+                <input
+                  id="logoSize"
+                  type="number"
+                  value="20"
+                  min="6"
+                  max="30"
+                />
+              </div>
+              <div style="flex: 1">
+                <label>Fondo logo (opcional) Transparecia</label>
+                <div style="display: flex; gap: 6px; align-items: center">
+                  <input id="logoBgPicker" type="color" value="#ffffff" />
+                  <input
+                    id="logoBg"
+                    type="text"
+                    value="#ffffff"
+                    maxlength="7"
+                  />
+                  <input
+                    id="logoBgOpacity"
+                    type="number"
+                    step="0.05"
+                    min="0"
+                    max="1"
+                    value="1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 6px; flex-wrap: wrap">
+            <button id="genBtn" class="btn">Generar / Vista previa</button>
+            <button id="dlPng" class="btn secondary">Descargar PNG</button>
+            <button id="dlSvg" class="btn ghost">Descargar SVG</button>
+          </div>
+
+          <div class="footerNote">
+            Nota: si vas a incrustar logo, usa nivel de corrección Q o H. Para
+            imprimir, usa tamaño grande (>=800px).
+          </div>
+        </div>
+      </div>
+
+      <div class="card previewWrap">
+        <div class="row" style="justify-content: space-between; width: 100%">
+          <div>
+            <label class="small">Previsualización</label>
+            <div class="small" id="meta"></div>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center">
+            <button id="zoomIn" class="btn ghost">+</button>
+            <button id="zoomOut" class="btn ghost">-</button>
+          </div>
+        </div>
+
+        <canvas id="canvas" width="700" height="700"></canvas>
+
+        <div
+          style="
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 6px;
+            flex-wrap: wrap;
+          "
+        >
+          <div
+            style="
+              width: 54px;
+              height: 54px;
+              border-radius: 8px;
+              overflow: hidden;
+              border: 1px solid #e6e9ef;
+              background: #fff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <canvas
+              id="thumb"
+              width="54"
+              height="54"
+              style="width: 54px; height: 54px"
+            ></canvas>
+          </div>
+          <div>
+            <div class="small">Thumbnail</div>
+            <div id="sizeInfo" class="small"></div>
+          </div>
+          <button id="resetBtn" class="btn secondary">Restablecer QR</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
