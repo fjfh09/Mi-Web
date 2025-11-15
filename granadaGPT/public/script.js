@@ -35,7 +35,7 @@ async function handleQuestion() {
 // Funcion para obtener la respuesta de la IA desde el servidor
 async function getAIResponse(pregunta2) {
     try {
-        const response = await fetch('https://fjfh06.ddns.net:443/proyectoLMSGI/get-ai-response', {
+        const response = await fetch('https://fjfh06.ddns.net:443/granadaGPT/get-ai-response', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ pregunta: pregunta2 }),

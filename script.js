@@ -289,8 +289,8 @@ const Projects = props => {
             title: "Granada GPT",
             img: '/archivos/logo-granada.png',
             tech: "html5 js node css ",
-            link: "https://fjfh06.ddns.net/proyectoLMSGI/",
-            repo: "https://github.com/fjfh09/fjfh09.github.io",
+            link: "https://fjfh06.ddns.net/granadaGPT/",
+            repo: "https://github.com/fjfh09/Mi-Web",
             className: "granada-project" // <- AÑADIDO
           },
 
@@ -304,8 +304,8 @@ const Projects = props => {
             title: "Discord Hunter",
             img: '/discord_hunter/fotos/logo_dh.png',
             tech: "html5 js node css",
-            link: "/discord_hunter/index.html",
-            repo: "https://github.com/fjfh09/fjfh09.github.io"
+            link: "/discord_hunter/",
+            repo: "https://github.com/fjfh09/Mi-Web"
           }, /*#__PURE__*/
 
             React.createElement("small", null, "Minijuego de un bot de discord "), /*#__PURE__*/
@@ -332,8 +332,8 @@ const Projects = props => {
             title: "Web de Cortes y Graena.",
             img: '/cortesygraena/archivos/informacion/plano.png',
             tech: "html5 js css",
-            link: "/cortesygraena/index.html",
-            repo: "https://github.com/fjfh09/fjfh09.github.io"
+            link: "/cortesygraena/",
+            repo: "https://github.com/fjfh09/Mi-Web"
           }, /*#__PURE__*/
 
             React.createElement("small", null, "Web hecha para un proyecto de Aplicaciones Web"), /*#__PURE__*/
