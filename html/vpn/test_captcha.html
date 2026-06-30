@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html><head>
+<script>
+  fetch("https://vpn.almagara.es/api/contacto.php?getSiteKey=1")
+    .then(r => r.json())
+    .then(d => document.body.innerHTML += "<p>Key: " + d.siteKey + "</p>");
+</script>
+</head><body><h1>Test</h1></body></html>

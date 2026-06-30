@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlmagaraVPN</title>
+    <link rel="icon" href="/archivos/vpn/wireguard_logo_red.png">
+    <link rel="stylesheet" href="/vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="script.js?v=2" defer></script>
+  </head>
+  
+<body>
+<div id="estado-bar">
+  <span id="mi-ip">Tu IP: Sin datos</span>
+  <span id="separador">·</span>
+  <span id="mi-estado">Tu estado: Sin datos</span>
+</div>
+
+<div class="header-bar">
+  <div class="left-content">
+    <img src="../archivos/vpn/wireguard_logo.png" alt="WireGuard" style="height: 50px;">
+    <h1>AlmagaraVPN</h1>
+  </div>
+  <div class="right-content">
+    <a href="https://vpn.almagara.es/cliente" class="login-button">
+      <i class="fas fa-lock"></i>
+      <span>Iniciar sesión</span>
+    </a>
+  </div>
+</div>
+
+<details class="que-es-vpn-container" open>
+  <summary><i class="fas fa-question-circle"></i> ¿Qué es una VPN?</summary>
+  <div class="que-es-vpn">
+    <p>
+      Una <strong>VPN (Red Privada Virtual)</strong> es la manera más fácil de navegar de forma <strong>segura, privada y sin restricciones</strong>.  
+      Crea un <strong>túnel cifrado</strong> entre tu dispositivo y nuestros servidores para que nadie pueda ver lo que haces en Internet.  
+    </p>
+    <p>
+      Con nuestra VPN tu <strong>dirección IP real queda oculta</strong>, y puedes navegar como si estuvieras en otro país (como España) o usar una 
+      <strong>IP fija</strong>. Esto es perfecto para <strong>compartir cuentas de streaming o academias online</strong>, ya que las plataformas 
+      creerán que siempre te conectas desde el mismo lugar.
+    </p>
+    <p>
+      Además, incluimos un <strong>bloqueador de anuncios</strong> para que disfrutes de tus páginas web, juegos y aplicaciones 
+      sin publicidad molesta.
+    </p>
+    <ul>
+      <li><i class="fas fa-check"></i> <strong>Privacidad total</strong>: protege tu identidad en línea.</li>
+      <li><i class="fas fa-check"></i> <strong>Seguridad extra</strong>: conecta sin riesgos en Wi-Fi públicas o compartidas.</li>
+      <li><i class="fas fa-check"></i> <strong>Acceso ilimitado</strong> a contenidos de streaming, juegos y webs.</li>
+      <li><i class="fas fa-check"></i> <strong>IP fija</strong> para apps, streaming y clases online.</li>
+      <li><i class="fas fa-check"></i> <strong>Comparte cuentas</strong> sin preocupaciones: siempre parecerá que te conectas desde el mismo lugar.</li>
+      <li><i class="fas fa-check"></i> <strong>Navegación más rápida y limpia</strong> gracias a nuestro bloqueador de anuncios.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="ventajas-container">
+  <summary><i class="fas fa-star"></i> ¿Por qué elegir nuestra VPN?</summary>
+  <div class="ventajas">
+    <ul>
+      <li><i class="fas fa-shield-alt"></i> <strong>Seguridad de última generación</strong> gracias al protocolo WireGuard, más moderno, rápido y seguro que OpenVPN.</li>
+      <li><i class="fas fa-bolt"></i> <strong>Alta velocidad</strong> en todo momento, sin límites de ancho de banda.</li>
+      <li><i class="fas fa-globe"></i> <strong>Acceso global</strong> a contenido restringido, evita bloqueos geográficos.</li>
+      <li><i class="fas fa-share-alt"></i> <strong>Acceso y uso compartido en plataformas de streaming</strong>: aunque servicios como Netflix limitan el uso de una cuenta a una sola IP, nuestra VPN te permite conectarte desde múltiples ubicaciones o dispositivos con diferentes IPs, así permitiendo compartir cuentas de cada plataforma.</li>
+      <li><i class="fas fa-eye-slash"></i> <strong>Bloqueo integrado de anuncios y trackers</strong>: disfruta de una navegación más rápida, limpia y segura, sin anuncios molestos ni rastreadores que comprometan tu privacidad.</li>
+      <li><i class="fas fa-mobile-alt"></i> <strong>Compatible con todos tus dispositivos</strong>: Android, iOS, Windows, Linux, Mac, AndroidTV y routers.</li>
+      <li><i class="fas fa-users"></i> <strong>Uso compartido</strong> para múltiples dispositivos o perfiles, ideal para familias o grupos.</li>
+      <li><i class="fas fa-envelope"></i> <strong>Soporte personalizado</strong> vía correo electrónico, sin bots ni respuestas automáticas.</li>
+      <li><i class="fas fa-tools"></i> <strong>Fácil configuración</strong> con guías paso a paso para todos los sistemas operativos.</li>
+      <li><i class="fas fa-user-shield"></i> <strong>Protección avanzada</strong> contra fugas de DNS e IP para máxima privacidad.</li>
+      <li><i class="fas fa-wifi"></i> <strong>Perfecta para redes públicas</strong> Wi-Fi, manteniendo tus datos seguros en cualquier lugar.</li>
+    </ul>
+  </div>
+</details>
+
+<p class="info">
+  Los perfiles indican la cantidad de conexiones simultáneas que puedes tener con la VPN.
+  <br>
+  Por tanto, 1 perfil es para un dispositivo o 5 perfiles son para 5 dispositivos simultáneos (están conectados a la vez).
+</p>
+
+<div id="plans"></div>
+
+<p class="aviso">
+  Al pulsar el botón "Elegir", se te redirigirá a la sección de contacto con un mensaje predefinido. <i class="fas fa-envelope"></i>
+</p>
+
+<details class="faq-container">
+  <summary><i class="fas fa-question-circle"></i> Preguntas frecuentes</summary>
+  <div class="faq">
+    <details>
+      <summary><i class="fas fa-info-circle"></i> ¿Qué necesito para conectarme?</summary>
+      <p>Solo necesitas una app compatible con WireGuard (Android, iOS, Windows, Linux, Mac, AndroidTV o router) y el archivo de configuración que te enviaremos.</p>
+    </details>
+    <details>
+      <summary><i class="fas fa-tachometer-alt"></i> ¿La VPN reduce la velocidad?</summary>
+      <p>WireGuard está optimizado para ofrecer la mejor velocidad posible, mucho mejor que otras VPN tradicionales como OpenVPN o L2TP.</p>
+    </details>
+    <details>
+      <summary><i class="fas fa-shield-alt"></i> ¿Puedo usarla en redes públicas?</summary>
+      <p>Sí, la VPN cifra toda tu conexión, ideal para Wi-Fi públicas en cafeterías, aeropuertos, hoteles, etc.</p>
+    </details>
+    <details>
+      <summary><i class="fas fa-mobile-alt"></i> ¿Cuántos dispositivos puedo usar?</summary>
+      <p>Depende del plan. Por ejemplo, el Plan Trio permite 3 dispositivos conectados al mismo tiempo.</p>
+    </details>
+    <details>
+      <summary><i class="fas fa-users"></i> ¿Puedo compartir mi cuenta VPN con familiares o amigos?</summary>
+      <p>Sí, los planes de múltiples perfiles están diseñados para que puedas compartir el acceso con quienes quieras.</p>
+    </details>
+    <details>
+      <summary><i class="fas fa-envelope"></i> ¿Cómo contacto al soporte si tengo problemas?</summary>
+      <p>Solo por correo electrónico; nuestro equipo responderá personalmente para ayudarte en lo que necesites.</p>
+      <p>
+        Escríbenos a:
+        <a href="mailto:vpn@almagara.es" style="color: #ff4c4c">
+          vpn@almagara.es
+        </a>
+      </p>
+    </details>
+    <details>
+      <summary><i class="fas fa-user-lock"></i> ¿Mis datos están seguros usando esta VPN?</summary>
+      <p>Sí, gracias a WireGuard y las medidas avanzadas de cifrado y protección contra fugas, tus datos están a salvo.</p>
+    </details>
+    <details>
+      <summary><i class="fas fa-lightbulb"></i> ¿Es difícil configurar la VPN?</summary>
+      <p>No, enviamos configuraciones listas para usar con instrucciones claras para cada sistema operativo.</p>
+    </details>
+  </div>
+</details>
+
+<form id="contactForm" onsubmit="return enviarFormulario();">
+  <h3>Contacto</h3>
+  <label for="nombre">Nombre y apellidos:</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="correo">Correo:</label>
+  <input type="email" id="correo" name="correo" required>
+
+  <label for="asunto">Asunto:</label>
+  <input type="text" id="asunto" name="asunto" required>
+
+  <label for="mensaje">Mensaje:</label>
+  <textarea id="mensaje" name="mensaje" required></textarea>
+
+  <div id="recaptcha-container" style="margin-bottom: 15px;"></div>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<p style="margin-top: 40px; font-size: 0.9em; color: #aaa;">
+  Esta VPN está gestionada manualmente por personas reales <i class="fas fa-user-cog"></i>. Tu privacidad y experiencia son lo primero.
+</p>
+
+<div class="toast-container">
+  <div id="toast" class="toast">
+    <div class="toast-content">
+      <span class="toast-icon"><i></i></span>
+      <span class="toast-text"></span>
+    </div>
+    <button type="button" class="toast-close" onclick="hideToast()">&times;</button>
+  </div>
+</div>
+</body>
+
+</html>

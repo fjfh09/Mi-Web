@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /clasesGemma/
+Disallow: /vpn/
+Disallow: /app/
+Disallow: /clubshaolin/
+Disallow: /minecraft/
+Disallow: /archivos/imgMinecraft/
+Allow: /
+Sitemap: https://fjfh.almagara.es/sitemap.xml

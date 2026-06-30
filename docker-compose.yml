@@ -1,0 +1,55 @@
+
+services:
+  # Servicio PHP-FPM dedicado (ejecuta el backend de PHP 8.1)
+  web-fpm:
+    build:
+      context: .
+      dockerfile: fpm.Dockerfile
+    container_name: web-fpm
+    restart: unless-stopped
+    volumes:
+      - /home/fjavipi/Desktop/Web/html:/var/www/html
+      - /home/fjavipi/Desktop/Web/perfiles:/perfiles
+    networks:
+      - web_net
+      - internal_net
+
+  # Servidor Frontend Nginx & Proxy Inverso Seguro
+  web-nginx:
+    image: nginx:alpine
+    container_name: web-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/fjavipi/Desktop/Web/html:/var/www/html
+      - /home/fjavipi/Desktop/Web/certs:/etc/letsencrypt:ro
+      - /home/fjavipi/Desktop/Web/nginx-conf:/etc/nginx/conf.d:ro
+    depends_on:
+      - web-fpm
+      # - granada-gpt
+    networks:
+      - web_net
+      - internal_net
+
+  # Servicio GranadaGPT (Node.js) dedicado (Comentado ya que no se utiliza)
+  # granada-gpt:
+  #   image: node:18-alpine
+  #   container_name: granada-gpt
+  #   restart: unless-stopped
+  #   working_dir: /app
+  #   volumes:
+  #     - /home/fjavipi/Desktop/Web/html/granadaGPT:/app
+  #   command: node server.js
+  #   networks:
+  #     - web_net
+
+networks:
+  # Red interna del stack
+  web_net:
+    driver: bridge
+  # Red externa preexistente para intercomunicación entre contenedores externos
+  internal_net:
+    external: true
+    name: internal_net

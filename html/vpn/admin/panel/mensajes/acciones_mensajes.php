@@ -1,0 +1,40 @@
+<?php
+session_name('SESSION_ADMIN');
+session_start();
+
+if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
+    header("Location: ../index.php");
+    exit;
+}
+
+if (!isset($_POST['seleccionados']) || !is_array($_POST['seleccionados'])) {
+    header("Location: index.php");
+    exit;
+}
+
+$ids = $_POST['seleccionados'];
+$accion = $_POST['accion'];
+
+try {
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/vpn/db_config.php';
+
+    if ($accion === 'leido') {
+        $sql = "UPDATE mensajes SET visto = 1 WHERE id IN (" . implode(',', array_fill(0, count($ids), '?')) . ")";
+    } elseif ($accion === 'noleido') {
+        $sql = "UPDATE mensajes SET visto = 0 WHERE id IN (" . implode(',', array_fill(0, count($ids), '?')) . ")";
+    } elseif ($accion === 'borrar') {
+        $sql = "DELETE FROM mensajes WHERE id IN (" . implode(',', array_fill(0, count($ids), '?')) . ")";
+    } else {
+        header("Location: index.php");
+        exit;
+    }
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($ids);
+
+} catch (PDOException $e) {
+    die("Error BD: " . $e->getMessage());
+}
+
+header("Location: index.php");
+exit;
